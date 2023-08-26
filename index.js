@@ -1,6 +1,11 @@
-import { getContactById, listContacts, removeContact } from "./contacts.js";
+import {
+  addContact,
+  getContactById,
+  listContacts,
+  removeContact,
+} from "./contacts.js";
 
-const invokeAction = async ({ action, contacId }) => {
+const invokeAction = async ({ action, contacId, name, email, phone }) => {
   switch (action) {
     case "list":
       const allContacts = await listContacts();
@@ -11,7 +16,9 @@ const invokeAction = async ({ action, contacId }) => {
       return console.log(contactById);
 
     case "add":
-      return;
+      const newContact = await addContact({ name, email, phone });
+
+      return console.log(newContact);
 
     case "remove":
       const removedContact = await removeContact(contacId);
@@ -25,3 +32,9 @@ const invokeAction = async ({ action, contacId }) => {
 // invokeAction({ action: "list" });
 // invokeAction({ action: "get", contacId: "05olLMgyVQdWRwgKfg5J6" });
 // invokeAction({ action: "remove", contacId: "vza2RIzNGIwutCVCs4mCL" });
+// invokeAction({
+//   action: "add",
+//   name: "Mango ",
+//   email: "mango@gmail.com",
+//   phone: "322-22-22",
+// });
