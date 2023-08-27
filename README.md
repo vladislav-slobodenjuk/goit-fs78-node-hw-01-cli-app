@@ -6,4 +6,6 @@
 
 [add](https://prnt.sc/K1PICLCkHtv3)
 
+[update](https://prnt.sc/Q_ksF1zClU5K)
+
 [remove](https://prnt.sc/ko87GiO9HUv9)

@@ -4,6 +4,7 @@ import {
   getContactById,
   listContacts,
   removeContact,
+  updateContact,
 } from "./contacts.js";
 
 program
@@ -31,6 +32,10 @@ async function invokeAction({ action, id, name, email, phone }) {
     case "add":
       const newContact = await addContact({ name, email, phone });
       return console.log(newContact);
+
+    case "update":
+      const updatedContact = await updateContact(id, { name, email, phone });
+      return console.log(updatedContact);
 
     case "remove":
       const removedContact = await removeContact(id);
